@@ -51,16 +51,11 @@ function populateDays(month) {
     //check if currentYear is Leap
     console.log("currentYear =", selectedYear);
     if (selectedYear % 4 == 0) {
-      if (selectedYear % 100 == 0) {
-        if (selectedYear % 400 == 0) {
-          numOfdays = 29;
-          leapFlag = true;
-        } else {
-          leapFlag = true;
-          numOfdays = 29;
-        }
-      } else {
+      if (selectedYear % 100 === 0 && selectedYear % 400 === 0) {
         numOfdays = 29;
+        leapFlag = true;
+      } else {
+        numOfdays = 28;
       }
     } else {
       numOfdays = 28;
